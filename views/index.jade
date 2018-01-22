@@ -1,0 +1,90 @@
+extends ./layout
+
+block content
+  .container
+    .column
+      .header
+          h1 Year in Pixels
+    .column
+      #pixels
+  .container
+    .column
+      .grid#moodGrid
+        div.item
+          span
+          div.days
+            - each _, i in Array(31)
+              span.day= i+1
+        - each _, i in Array(grid[prop])
+          - for (var prop in grid)
+            div.item.month(data-month="#{prop}")
+              span= prop[0]
+              - each _, i in Array(grid[prop])
+                a(href="#", data-mood="0")
+    .column
+      .interface
+        h2 Hello there,<br />how are you feeling today?
+        form(id="submitMood", action="")
+          - for (var prop in moodOptions)
+            div
+              input(type="radio", class="mood-#{prop}" id="#{moodOptions[prop]}", name="dayMood", value="#{prop}")
+              label(for="#{moodOptions[prop]}")
+        #message
+          p 
+            | Your day has been
+            |  
+            u amazing
+            | .
+        div#chart
+          div.ct-chart
+        div#quoteOfTheDay
+          p Loading...
+        div#footer
+          ul.menu
+            li
+              a(href="#" data-menu="import") Import
+            li
+              a(href="#" data-menu="export") Export
+            li
+              a(href="#" data-menu="demo") Demo data
+            li
+              a(href="#" data-menu="clear") Clear data
+            li
+              a(href="#" data-menu="about") About
+          ul.social
+            li
+              a.twitter-share-button(href='https://twitter.com/intent/tweet?text=Start+tracking+your+year+and+how+you+feel+in+pixels', data-size='large')
+                | Tweet
+            li
+              iframe(src='https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fyear-in-pixels.glitch.me%2F&layout=button_count&size=large&mobile_iframe=true&appId=132593400164506&width=84&height=28', width='95', height='28', style='border:none;overflow:hidden', scrolling='no', frameborder='0', allowtransparency='true')
+
+  #menu
+    #importDialog.dialog
+      a.close(href="#") X
+      h3 Import a mood calendar
+      p Paste the code copied from the export tool and click the import button.
+      textarea(id="importMoodText")
+      button(id="importMoodBtn") Import
+    #exportDialog.dialog
+      a.close(href="#") X
+      h3 Export a mood calendar
+      p Copy the following text and the use the import tool to import it.
+      textarea(id="exportMoodText", onclick="this.focus();this.select()", readonly="readonly")
+    #aboutDialog.dialog
+      a.close(href="#") X
+      h3 Hello there and thank you
+      p First of all thank you for your interest on this little tool.
+      p This tool was made to keep track of your mood during all year using pixels. You can load this page every day and select how you're feeling. The tool will keep track of your mood and give you some visualization about how you've felt during the year.
+      p The idea for this tool is not new at all, but I've never seen this format online before. I hope you enjoy it.
+      p You can import/export your calendar too, in case you're using different browsers or computers.
+      h3 About the author
+      p
+        | My name is Alejandro AR 
+        | (
+        a(href="http://kinduff.com") @kinduff
+        | )
+        | and I enjoy making little tools that help out people.
+      p Thanks for passing by.
+      
+  script(type='text/javascript').
+    var moodOptions = !{JSON.stringify(moodOptions)}

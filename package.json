@@ -1,0 +1,22 @@
+{
+  "name": "year-in-pixels",
+  "version": "0.0.1",
+  "description": "Small tool to keep track of your mood during all year using pixels.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": {
+    "name": "Alejandro AR (kinduff)",
+    "email": "el@kinduff.com",
+    "url": "http://kinduff.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2",
+    "jade": "^1.11.0"
+  },
+  "engines": {
+    "node": "8.x"
+  }
+}
