@@ -23,18 +23,19 @@ block content
                 a(href="#", data-mood="0")
     .column
       .interface
-        h2 Hello there,<br />how are you feeling today?
-        form(id="submitMood", action="")
-          - for (var prop in moodOptions)
-            div
-              input(type="radio", class="mood-#{prop}" id="#{moodOptions[prop]}", name="dayMood", value="#{prop}")
-              label(for="#{moodOptions[prop]}")
-        #message
-          p 
-            | Your day has been
-            |  
-            u amazing
-            | .
+        .mood-form
+          h2 Hello there,<br />how are you feeling today?
+          form(id="submitMood", action="")
+            - for (var prop in moodOptions)
+              div
+                input(type="radio", class="mood-#{prop}" id="#{moodOptions[prop]}", name="dayMood", value="#{prop}")
+                label(for="#{moodOptions[prop]}")
+          #message
+            p 
+              | Your day has been
+              |  
+              u amazing
+              | .
         div#chart
           div.ct-chart
         div#quoteOfTheDay
@@ -68,22 +69,22 @@ block content
     #exportDialog.dialog
       a.close(href="#") X
       h3 Export a mood calendar
-      p Copy the following text and the use the import tool to import it.
+      p Copy the following text and use the import tool to import it.
       textarea(id="exportMoodText", onclick="this.focus();this.select()", readonly="readonly")
     #aboutDialog.dialog
       a.close(href="#") X
       h3 Hello there and thank you
-      p First of all thank you for your interest on this little tool.
-      p This tool was made to keep track of your mood during all year using pixels. You can load this page every day and select how you're feeling. The tool will keep track of your mood and give you some visualization about how you've felt during the year.
-      p The idea for this tool is not new at all, but I've never seen this format online before. I hope you enjoy it.
-      p You can import/export your calendar too, in case you're using different browsers or computers.
+      p First of all, thank you for your interest in this little tool.
+      p This tool was made to keep track of your mood during the entire year, using pixels. You can load this page every day and select how you're feeling. The tool will keep track of your mood and give you a visual for how you've felt during the year.
+      p If you use different browsers or computers, you can import/export your calendar too.
+      p While the idea for this tool is not new at all, I've never seen this format online before. I hope you enjoy it.
       h3 About the author
       p
         | My name is Alejandro AR 
         | (
         a(href="http://kinduff.com") @kinduff
         | )
-        | and I enjoy making little tools that help out people.
+        | and I enjoy making little tools that help people out.
       p Thanks for passing by.
       
   script(type='text/javascript').
