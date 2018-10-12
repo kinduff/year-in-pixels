@@ -241,7 +241,7 @@ form input[type=radio] ~ label:before {
 .dialog {
   font-family: 'Coming soon', cursive;
   width: 300px;
-  position: absolute;
+  position: fixed;
   background-color: #FFF;
   left: 50%;
   top: 50%;
@@ -308,7 +308,6 @@ form input[type=radio] ~ label:before {
   .dialog {
     width: 100%;
     height: 100%;
-    position: fixed;
     top: 0;
     left: 0;
     transform: none;

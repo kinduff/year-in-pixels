@@ -3,6 +3,16 @@
   var $moodItems = $moodGrid.find('a');
   var $dayMood = $("input[name=dayMood]");
   var activeMoodDay;
+  var moodCalendarUrlHash = window.location.hash;
+  var userPrefersHash = false;
+  console.log(moodCalendarUrlHash);
+  if (moodCalendarUrlHash) {
+    userPrefersHash = true;
+  }
+  
+  function getUrlHash() {
+    return window.location.hash.split("/")[1];
+  }
 
   function getTodayDayNumber() {
     var now = new Date();
@@ -39,12 +49,23 @@
   
   function updateMoodCalendar() {
     var moods = getMoodCalendarString();
-    localStorage.removeItem('moodCalendar');
-    localStorage.setItem('moodCalendar', moods);
+    if (userPrefersHash) {
+      window.location.hash = "/" + moods;
+    } else {
+      localStorage.removeItem('moodCalendar');
+      localStorage.setItem('moodCalendar', moods);
+    }
   }
 
   function loadMoodCalendar(moodCalendar) {
-    var moodArr = moodCalendar || localStorage.getItem('moodCalendar');
+    var moodArr;
+    if (moodCalendar) {
+      moodArr = moodCalendar;
+    } else if (userPrefersHash) {
+      moodArr = getUrlHash();
+    } else {
+      moodArr = localStorage.getItem('moodCalendar')
+    }
     if (moodArr) {
       setMoods(moodArr.split(''));
     }
