@@ -20,4 +20,7 @@ Nothing fancy, I wanted to keep things as simple as possible to be able to devel
 ## About the author
 My name is Alejandro AR (@kinduff) and I enjoy making little tools that help out people.
 
+## Thanks to the contributors!
+- :star: Thank you [@dschep](https://github.com/dschep) for adding PWA support
+
 Thanks for passing by.
