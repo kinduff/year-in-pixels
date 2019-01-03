@@ -4,7 +4,7 @@
     "name": "Year in Pixels",
     "scope": "/",
     "display": "standalone",
-    "start_url": "https://year-in-pixels-pwa.glitch.me/",
+    "start_url": "https://year-in-pixels.glitch.me/",
     "short_name": "Year in Pixels",
     "theme_color": "#ffffff",
     "description": "Small tool to keep track of your mood during all year using pixels.",
