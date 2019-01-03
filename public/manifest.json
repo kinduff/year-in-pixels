@@ -1,0 +1,21 @@
+{
+    "dir": "ltr",
+    "lang": "en",
+    "name": "Year in Pixels",
+    "scope": "/",
+    "display": "standalone",
+    "start_url": "https://year-in-pixels-pwa.glitch.me/",
+    "short_name": "Year in Pixels",
+    "theme_color": "#ffffff",
+    "description": "Small tool to keep track of your mood during all year using pixels.",
+    "orientation": "any",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "https://cdn.glitch.com/86c99ebe-0198-4c6e-8de1-c4e515e04792%2Ffavicon.png?1546264249921",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+}
