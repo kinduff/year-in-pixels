@@ -39,10 +39,12 @@ var precacheFiles = [
 //Install stage sets up the cache-array to configure pre-cache content
 self.addEventListener('install', function(evt) {
   console.log('[PWA Builder] The service worker is being installed.');
+  /*
   evt.waitUntil(precache().then(function() {
     console.log('[PWA Builder] Skip waiting on install');
     return self.skipWaiting();
   }));
+  */
 });
 
 
@@ -54,8 +56,8 @@ self.addEventListener('activate', function(event) {
 
 self.addEventListener('fetch', function(evt) {
   console.log('[PWA Builder] The service worker is serving the asset.'+ evt.request.url);
-  evt.respondWith(fromCache(evt.request).catch(fromServer(evt.request)));
-  evt.waitUntil(update(evt.request));
+  evt.respondWith(/*fromCache(evt.request).catch(*/fromServer(evt.request))/*)*/;
+  //evt.waitUntil(update(evt.request));
 });
 
 
