@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppController root should return base config 1`] = `
+Object {
+  "grid": Object {
+    "Apr": 30,
+    "Aug": 31,
+    "Dec": 31,
+    "Feb": 28,
+    "Jan": 31,
+    "Jul": 31,
+    "Jun": 30,
+    "Mar": 31,
+    "May": 31,
+    "Nov": 30,
+    "Oct": 31,
+    "Sep": 30,
+  },
+  "moodOptions": Object {
+    "0": "none",
+    "1": "tough",
+    "2": "difficult",
+    "3": "average",
+    "4": "great",
+    "5": "amazing",
+  },
+}
+`;

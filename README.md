@@ -12,6 +12,7 @@ You can import/export your calendar too, in case you're using different browsers
 Nothing fancy, I wanted to keep things as simple as possible to be able to develop this during a Friday.
 
 - Node.js
+- Nest.js
 - jQuery
 - Chartist.js
 - IcoFont

@@ -1,0 +1,10 @@
+.idea
+.vscode
+.nyc_output/
+coverage/
+
+node_modules
+schematics/
+dist
+
+.DS_Store
