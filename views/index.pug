@@ -13,27 +13,26 @@ block content
         div.item
           span
           div.days
-            - each _, i in Array(31)
+            each _, i in Array(31)
               span.day= i+1
-        - each _, i in Array(grid[prop])
-          - for (var prop in grid)
-            div.item.month(data-month="#{prop}")
-              span= prop[0]
-              - each _, i in Array(grid[prop])
-                a(href="#", data-mood="0")
+        each month in Object.keys(grid)
+          div.item.month(data-month=month)
+            span= month[0]
+            each _, i in Array(grid[month])
+              a(href="#", data-mood="0")
     .column
       .interface
         .mood-form
           h2 Hello there,<br />how are you feeling today?
           form(id="submitMood", action="")
-            - for (var prop in moodOptions)
+            each prop in Object.keys(moodOptions)
               div
-                input(type="radio", class="mood-#{prop}" id="#{moodOptions[prop]}", name="dayMood", value="#{prop}")
-                label(for="#{moodOptions[prop]}")
+                input(type="radio", class=`mood-${prop}` id=moodOptions[prop], name="dayMood", value=prop)
+                label(for=moodOptions[prop])
           #message
-            p 
+            p
               | Your day has been
-              |  
+              |
               u amazing
               | .
         div#chart
@@ -80,14 +79,14 @@ block content
       p Credits to Camille (@passioncarnets), the original creator of this format.
       h3 About the author
       p
-        | My name is Alejandro AR 
+        | My name is Alejandro AR
         | (
         a(href="http://kinduff.com") @kinduff
         | )
         | and I enjoy making little tools that help people out.
       h3 Thanks to the contributors!
       p
-        | Thank you 
+        | Thank you
         a(href="http://schep.me") @schep_
         | for adding PWA support!
       p Thanks for passing by.

@@ -4,7 +4,8 @@
   "description": "Small tool to keep track of your mood during all year using pixels.",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "echo 'Build completed'"
   },
   "author": {
     "name": "Alejandro AR (kinduff)",
@@ -14,7 +15,7 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.21.2",
-    "jade": "^1.11.0"
+    "pug": "^3.0.2"
   },
   "engines": {
     "node": "24.x"
