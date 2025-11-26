@@ -30,6 +30,7 @@ html
     link(rel='stylesheet', href='/font.css')
     link(rel='manifest', href='/manifest.json')
     meta(name='theme-color', content='#ffffff')
+    script(defer src="https://good.lasagna.pizza/script.js" data-website-id="1e04b231-4513-490e-a9a9-1ce95db6ea6f")
 
   body
     .content
@@ -38,12 +39,6 @@ html
     script(src='https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.0/chartist.js', integrity='sha256-ecMZjeiA/pSkp5neBcgNy+5LhWaw5+CZTAldMlhfxnk=', crossorigin='anonymous')
     script(src='/script.js')
     script(src='/sw-register.js')
-    script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-112818838-1')
-    script.
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-112818838-1');
   script.
     window.twttr = (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0],
