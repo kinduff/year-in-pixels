@@ -9,7 +9,7 @@
   if (moodCalendarUrlHash) {
     userPrefersHash = true;
   }
-  
+
   function getUrlHash() {
     return window.location.hash.split("/")[1];
   }
@@ -35,18 +35,18 @@
     $("input[name=dayMood][value=" + value + "]").prop('checked', true);
     $dayMood.trigger('change');
   }
-  
+
   function setMoods(arrayOfMoods) {
     var day = $moodGrid.find('a');
     day.each(function(i) {
-      $(this).attr("data-mood", arrayOfMoods[i]) 
+      $(this).attr("data-mood", arrayOfMoods[i])
     });
   }
 
   function getMoodCalendarString() {
     return $moodGrid.find('a').map(function() { return $(this).attr("data-mood") }).get().join('');
   }
-  
+
   function updateMoodCalendar() {
     var moods = getMoodCalendarString();
     if (userPrefersHash) {
@@ -70,7 +70,7 @@
       setMoods(moodArr.split(''));
     }
   }
-  
+
   function createPixelsForHeader() {
     var pixelsWidth = $("#pixels").width();
     var pixelsHeight = $("#pixels").height();
@@ -88,21 +88,20 @@
       }).appendTo('#pixels');
     }
   }
-  
+
   function setQuoteOfTheDay() {
     $.ajax({
-      url : "https://quotes.rest/qod",
+      url : "https://quotes.lasagna.pizza/quoteoftheday",
       dataType: "json",
       type: "GET",
       success: function(data) {
-        var content = data["contents"]["quotes"][0];
-        var quote = content["quote"];
-        var author = content["author"];
+        var quote = data["quote"];
+        var author = data["author"];
         $("#quoteOfTheDay").html("<p>\""+quote+"\"</p><p class='author'>—"+author+"</p>");
       }
     });
   }
-  
+
   function getMonthMoodAvgArr() {
     var moods = $moodGrid.find('.item.month').map(function() {
       return $(this).find("a")
@@ -132,7 +131,7 @@
     });
     return results;
   }
-  
+
   function createAvgChart() {
     var data = {
       labels: ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"],
@@ -186,19 +185,19 @@
       $("#message").html(message);
     }
   });
-  
+
   $("#footer a").on("click", function(e) {
     e.preventDefault();
     var action = $(this).attr('data-menu');
     execMenuItem(action);
   });
-  
+
   $(".dialog .close").on("click", function(e) {
     e.preventDefault();
     $("#importMoodText").val('');
     $(this).parent('.dialog').fadeOut('fast');
   });
-  
+
   $("#importMoodBtn").on("click", function(e) {
     e.preventDefault();
     var moodCalendar = $("#importMoodText").val();
@@ -218,7 +217,7 @@
       alert("We're sorry.\nThe data is not valid. Please try again.");
     }
   });
-  
+
   var menu = {
     showImportDialog: function() {
       $("#importDialog").fadeIn('fast');
@@ -247,7 +246,7 @@
       $("#aboutDialog").fadeIn('fast');
     },
   }
-  
+
   function execMenuItem(action) {
     $(".dialog").fadeOut('fast');
     switch(action) {
